@@ -145,8 +145,8 @@ Software Hierachy
 
 
 
-People
-======
+Developers
+==========
 
-Akselii
+Akselii  
 zachanima
