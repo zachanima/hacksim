@@ -143,3 +143,10 @@ Software Hierachy
     * su
     * sudo
 
+
+
+People
+======
+
+Akselii
+zachanima
