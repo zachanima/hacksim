@@ -13,7 +13,7 @@ Engage in such activities as:
 * Gaining admin access to high-security websites
 * Retrieving data in exchange for information
 * Stealthly listening in on im/email conmunications
-* Hacking corporate networks
+* Hacking corporate networks, banks, government facilities and the likes
 * Breaking down security systems for information
 * Creating, managing and growing botnets
 * Tracing, hacking and framing other people
@@ -97,7 +97,6 @@ Software Hierachy
         * wget
       * ScanProgram
         * nmap
-        * traceroute
         * ping
         * whois
       * ConnectProgram
@@ -108,6 +107,7 @@ Software Hierachy
         * irc
       * MonitorProgram
         * netstat
+        * tracetracker
       * ExploitProgram
       * ProxyProgram
         * tor
@@ -142,6 +142,65 @@ Software Hierachy
   * SuperProgram
     * su
     * sudo
+
+
+Interface
+---------
+
+Discussed anatomies of the interface, ordered by agreement:
+
+    [    STATUS    ] 1st
+    +--------+-----+
+    |        | MAP |
+    |  TERM  +-----+
+    |        | COM |
+    +--------+-----+
+
+    [    STATUS    ] 2nd
+    +--------+-----+
+    |  VIEW  | SYS |
+    +--------+-----+
+    |  TERM  | COM |
+    +--------+-----+
+
+    [    STATUS    ] 3rd
+    +--------+-----+
+    |  VIEW  |     |
+    +--------+ COM |
+    |  TERM  |     |
+    +--------+-----+
+
+    [    STATUS    ] 4th
+    +--------------+
+    |     VIEW     |
+    +--------+-----+
+    |  TERM  | COM |
+    +--------+-----+
+
+`STATUS` contains current music track and current time
+
+`TERM` is the terminal - this is where the majority of the game takes place.
+
+`MAP`/`VIEW` is a map/blueprint of the current network location.
+
+`SYS` is general information about current events. This could be overlaying map.
+
+`COM` is the modular communication panel, containing;
+
+  * IRC
+  * BBS
+  * News
+  * Mail
+  * Jobs
+  * Music
+
+Left panels have a minimum width of 80 columns.
+
+Right panels have a fixed width of 50 columns. For IRC, with and without time
+stamps respectively, this would look like;
+
+    00:00 <ninechars> The quick brown fox jumps over t
+    <ninechars> The quick brown fox jumps over the laz
 
 
 
