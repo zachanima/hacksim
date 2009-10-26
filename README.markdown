@@ -147,60 +147,90 @@ Software Hierachy
 Interface
 ---------
 
-Discussed anatomies of the interface, ordered by agreement:
+Anatomy of the interface (1:2 scale):
 
-    [    STATUS    ] 1st
-    +--------+-----+
-    |        | MAP |
-    |  TERM  +-----+
-    |        | COM |
-    +--------+-----+
+    [ Artist - Track                                             00:00 ]
+    +----------------------------------------+-------------------------+
+    | $ sudo nmap localhost                  |                         |
+    | Starting Nmap 5.00 at 2009-10-26 06:01 |                         |
+    | Interesting ports on localhost (::1):  |                         |
+    | PORT  STATE  SERVICE  SOFTWARE         |                         |
+    |   21  open   ftp      pure-ftpd 1.0.24 |           MAP           |
+    |   80  open   http     lighttpd  1.4.24 |                         |
+    | Device type: general purpose           |                         |
+    | OS details: Linux 2.6.13-2.6.27        |                         |
+    | Nmap done: 1 host scanned in 7.38 s    | [fullscreen]    [local] |
+    | $                                      +-------------------------+
+    |                                        | NMAP 5.00 RELEASED      |
+    |                                        | ==================      |
+    |                                        | months of work since... |
+    |                TERMINAL                |                         |
+    |                                        | MEGACORP COMPROMISED    |
+    |                                        | ====================    |
+    |                                        | In what appears to be a |
+    |                                        | virus outbreak, Mega... |
+    |                                        |      COMMUNICATION      |
+    |                                        |                         |
+    |                                        |                         |
+    |                                        |                         |
+    |                                        |                         |
+    |                                        |                         |
+    |                                        |                         |
+    |                                        |                         |
+    |                                        | [irc][bbs][NEWS][music] |
+    +----------------------------------------+-------------------------+
 
-    [    STATUS    ] 2nd
-    +--------+-----+
-    |  VIEW  | SYS |
-    +--------+-----+
-    |  TERM  | COM |
-    +--------+-----+
+`TERMINAL` is where the majority of the game takes place.
 
-    [    STATUS    ] 3rd
-    +--------+-----+
-    |  VIEW  |     |
-    +--------+ COM |
-    |  TERM  |     |
-    +--------+-----+
+`MAP`/`LOCAL` is a map/blueprint of the current network location.
 
-    [    STATUS    ] 4th
-    +--------------+
-    |     VIEW     |
-    +--------+-----+
-    |  TERM  | COM |
-    +--------+-----+
-
-`STATUS` contains current music track and current time
-
-`TERM` is the terminal - this is where the majority of the game takes place.
-
-`MAP`/`VIEW` is a map/blueprint of the current network location.
-
-`SYS` is general information about current events. This could be overlaying map.
-
-`COM` is the modular communication panel, containing;
+`COMMUNICATION` is the modular communication panel, containing;
 
   * IRC
   * BBS
   * News
   * Mail
-  * Jobs
+  * Notes
   * Music
+  * Currently active job/jobs
+  * Known servers
 
-Left panels have a minimum width of 80 columns.
+Left panel has a minimum width of 80 columns.
 
-Right panels have a fixed width of 50 columns. For IRC, with and without time
-stamps respectively, this would look like;
+Right panels have a maximum width of 80 columns. Assuming a minimum width of 52
+columns, for IRC, with and without time stamps respectively, this would look
+like;
 
-    00:00 <ninechars> The quick brown fox jumps over t
-    <ninechars> The quick brown fox jumps over the laz
+    00:00 <ninechars> The quick brown fox jumps over the
+    <ninechars> The quick brown fox jumps over the lazy 
+
+
+Hardware
+--------
+
+Instead of buying upgrades (see **Money** section), any hacked system can be
+used as a *base of operations*. The specifications of the currently connected
+system will determine the overall speed of hacking, storage capacity, bandwidth
+etc.
+
+Your initial - and at all times available - system, localhost, will have pretty
+terrible specifications.
+
+In case of losing access to the currently preferred system, whatever copied to
+your localhost stays intact. Thus, localhost is kind of a safe (or at least
+safer) place to store the most important files.
+
+
+Money
+-----
+
+While the game *will* feature money, these will *not* be usable by the player.
+
+The purpose of money in the game is solely symbolic; ruining people or
+companies, supporting organisations, wiring funds ... In short, jobs etc.
+
+The player has no use for money, as upgrades are not bought, but taken (see
+**Hardware** section).
 
 
 
