@@ -6,6 +6,7 @@
 
 #include "../video/video.hpp"
 #include "../panel/panel.hpp"
+#include "../panel/terminal/terminal.hpp"
 
 class Game {
   public:
