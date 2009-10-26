@@ -6,8 +6,8 @@ unsigned int Video::height = 480;
 
 
 void Video::initialize(unsigned int width, unsigned int height, std::string title) {
-  Video::width  = width;
-  Video::height = height;
+  Video::setWidth(width);
+  Video::setHeight(height);
   Video::initialize(title);
 }
 
@@ -47,4 +47,12 @@ void Video::update() {
 
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }
+
+
+
+unsigned int Video::getWidth()                     { return Video::width; }
+unsigned int Video::setWidth(unsigned int width)   { return Video::width = width; }
+
+unsigned int Video::getHeight()                    { return Video::height; }
+unsigned int Video::setHeight(unsigned int height) { return Video::height = height; }
 
