@@ -9,7 +9,7 @@
 
 class Game {
   public:
-    static void initialize();
+    static void initialize(unsigned int, unsigned int, std::string);
     static void loop();
 
     static void load();
