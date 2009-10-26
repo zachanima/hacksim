@@ -6,8 +6,9 @@
 class Panel {
   public:
     Panel(int, int, int, int);
+    virtual void draw();
 
-    void draw();
+    int width();
 
   protected:
     int x1;
