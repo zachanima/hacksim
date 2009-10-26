@@ -193,6 +193,8 @@ Discussed anatomies of the interface, ordered by agreement:
   * Mail
   * Jobs
   * Music
+  * Notes
+  * Servers
 
 Left panels have a minimum width of 80 columns.
 
