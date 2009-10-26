@@ -1,7 +1,7 @@
 #include "game.hpp"
 
-void Game::initialize() {
-  Video::initialize(800, 480, "hacksim");
+void Game::initialize(unsigned int width, unsigned int height, std::string title) {
+  Video::initialize(width, height, title);
 
   load();
 }
