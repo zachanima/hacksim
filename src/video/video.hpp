@@ -8,8 +8,13 @@
 
 class Video {
   public:
+    static void initialize(std::string);
     static void initialize(unsigned int, unsigned int, std::string);
     static void update();
+
+  private:
+    static unsigned int width;
+    static unsigned int height;
 };
 
 #endif // VIDEO_HPP

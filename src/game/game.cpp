@@ -4,8 +4,8 @@ std::vector<Panel*> Game::panels;
 
 
 
-void Game::initialize(unsigned int width, unsigned int height, std::string title) {
-  Video::initialize(width, height, title);
+void Game::initialize(std::string title) {
+  Video::initialize(title);
 
   Game::load();
 }

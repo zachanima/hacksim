@@ -1,21 +1,34 @@
 #include "video.hpp"
 
+unsigned int Video::width  = 800;
+unsigned int Video::height = 480;
+
+
+
 void Video::initialize(unsigned int width, unsigned int height, std::string title) {
+  Video::width  = width;
+  Video::height = height;
+  Video::initialize(title);
+}
+
+
+
+void Video::initialize(std::string title) {
   const unsigned int bpp = 16;
-  int flags = SDL_OPENGL | SDL_GL_DOUBLEBUFFER | SDL_HWPALETTE | SDL_HWACCEL;
+  const int flags = SDL_OPENGL | SDL_GL_DOUBLEBUFFER | SDL_HWPALETTE | SDL_HWACCEL;
 
   SDL_Init(SDL_INIT_VIDEO);
   atexit(SDL_Quit);
 
   SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
   SDL_WM_SetCaption(title.c_str(), 0);
-  SDL_SetVideoMode(width, height, bpp, flags);
+  SDL_SetVideoMode(Video::width, Video::height, bpp, flags);
 
-  glViewport(0, 0, width, height);
+  glViewport(0, 0, Video::width, Video::height);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
   
-  glOrtho(0, width, height, 0, -1, 1);
+  glOrtho(0, Video::width, Video::height, 0, -1, 1);
   
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
