@@ -205,6 +205,34 @@ like;
     <ninechars> The quick brown fox jumps over the lazy 
 
 
+Hardware
+--------
+
+Instead of buying upgrades (see **Money** section), any hacked system can be
+used as a *base of operations*. The specifications of the currently connected
+system will determine the overall speed of hacking, storage capacity, bandwidth
+etc.
+
+Your initial - and at all times available - system, localhost, will have pretty
+terrible specifications.
+
+In case of losing access to the currently preferred system, whatever copied to
+your localhost stays intact. Thus, localhost is kind of a safe (or at least
+safer) place to store the most important files.
+
+
+Money
+-----
+
+While the game *will* feature money, these will *not* be usable by the player.
+
+The purpose of money in the game is solely symbolic; ruining people or
+companies, supporting organisations, wiring funds ... In short, jobs etc.
+
+The player has no use for money, as upgrades are not bought, but taken (see
+**Hardware** section).
+
+
 
 Developers
 ==========
