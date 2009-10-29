@@ -13,7 +13,7 @@
 
 class Font {
   public:
-    Font(std::string);
+    Font(std::string, int, int);
     void draw(std::string, SDL_Rect);
 
   private:

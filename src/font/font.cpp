@@ -1,9 +1,9 @@
 #include "font.hpp"
 
-Font::Font(std::string filename) {
+Font::Font(std::string filename, int w, int h) {
   Image* image = new Image(filename);
-  this->w = image->w / 16;
-  this->h = image->h / 16;
+  this->w = w;
+  this->h = h;
   this->texture = image->texture;
   delete(image);
 
@@ -27,7 +27,7 @@ Font::Font(std::string filename) {
 
 void Font::draw(std::string string, SDL_Rect area) {
   const int LETTER_SPACING = 1;
-  const unsigned int LINE_HEIGHT = 2;
+  const unsigned int LINE_HEIGHT = 1;
   int dx = 0;
   int dy = 0;
 

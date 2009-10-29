@@ -7,7 +7,7 @@ void Game::load() {
     { 6 * 80 + 3 + 2, 176 + 3 + 2, 800 - 6 * 80 - 3 - 3 - 2, 480 - 176 - 3 - 3 - 2 }
   };
 
-  Game::fonts.push_back(new Font("font.png"));
+  Game::fonts.push_back(new Font("font.png", 5, 9));
 
   // 80x60 @ 5x7
   Game::panels.push_back(new TerminalPanel(area[0], fonts[0]));
