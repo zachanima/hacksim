@@ -5,6 +5,7 @@
 #include <SDL/SDL_opengl.h>
 
 #include "../font/font.hpp"
+#include "../video/video.hpp"
 
 class Panel {
   public:

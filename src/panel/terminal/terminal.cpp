@@ -8,12 +8,7 @@ void TerminalPanel::draw() {
 
   // Draw background.
   glColor3f(0.25f, 0.25f, 0.25f);
-  glBegin(GL_QUADS);
-    glVertex2s(this->area.x               , this->area.y);
-    glVertex2s(this->area.x + this->area.w, this->area.y);
-    glVertex2s(this->area.x + this->area.w, this->area.y + this->area.h);
-    glVertex2s(this->area.x               , this->area.y + this->area.h);
-  glEnd();
+  Video::drawRectangle(this->area);
 
   // Draw buffer text.
   glColor3f(1.0f, 1.0f, 1.0f);

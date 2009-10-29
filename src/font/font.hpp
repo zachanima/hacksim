@@ -6,6 +6,8 @@
 #include <SDL/SDL_opengl.h>
 #include <boost/foreach.hpp>
 
+#include "../video/video.hpp"
+
 class Font {
   public:
     void draw(std::string, SDL_Rect);
