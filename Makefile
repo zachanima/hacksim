@@ -1,5 +1,5 @@
 PROJECT = hacksim
-IN      = src/*.cpp src/**/*.cpp
+IN      = src/*.cpp src/**/*.cpp src/**/**/*.cpp
 OUT     = bin/$(PROJECT)
 
 CC      = g++
