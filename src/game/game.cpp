@@ -1,6 +1,6 @@
 #include "game.hpp"
 
-void Game::initialize(unsigned int width, unsigned int height, std::string title) {
+void Game::initialize(int width, int height, std::string title) {
   Video::initialize(width, height, title);
 
   load();

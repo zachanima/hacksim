@@ -1,8 +1,12 @@
 #include "video.hpp"
 
-void Video::initialize(unsigned int width, unsigned int height, std::string title) {
-  const unsigned int bpp = 16;
-  int flags = SDL_OPENGL | SDL_GL_DOUBLEBUFFER | SDL_HWPALETTE | SDL_HWACCEL;
+void Video::initialize(int width, int height, std::string title) {
+  const int bpp = 16;
+  const int flags =
+    SDL_OPENGL |
+    SDL_GL_DOUBLEBUFFER |
+    SDL_HWPALETTE |
+    SDL_HWACCEL;
 
   SDL_Init(SDL_INIT_VIDEO);
   atexit(SDL_Quit);
