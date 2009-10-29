@@ -5,14 +5,6 @@ unsigned int Video::height = 480;
 
 
 
-void Video::initialize(unsigned int width, unsigned int height, std::string title) {
-  Video::setWidth(width);
-  Video::setHeight(height);
-  Video::initialize(title);
-}
-
-
-
 void Video::initialize(std::string title) {
   const unsigned int bpp = 16;
   const int flags = SDL_OPENGL | SDL_GL_DOUBLEBUFFER | SDL_HWPALETTE | SDL_HWACCEL;
@@ -47,12 +39,4 @@ void Video::update() {
 
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }
-
-
-
-unsigned int Video::getWidth()                     { return Video::width; }
-unsigned int Video::setWidth(unsigned int width)   { return Video::width = width; }
-
-unsigned int Video::getHeight()                    { return Video::height; }
-unsigned int Video::setHeight(unsigned int height) { return Video::height = height; }
 

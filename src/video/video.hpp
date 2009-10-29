@@ -8,13 +8,9 @@
 class Video {
   public:
     static void initialize(std::string);
-    static void initialize(unsigned int, unsigned int, std::string);
     static void update();
 
-    static unsigned int getWidth();
-    static unsigned int setWidth(unsigned int);
-    static unsigned int getHeight();
-    static unsigned int setHeight(unsigned int);
+    static void drawRectangle(SDL_Rect area);
 
   private:
     static unsigned int width;
