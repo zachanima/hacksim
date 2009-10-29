@@ -3,6 +3,8 @@ A Hacking Sim
 
 A persistent virtual internet hosts your underground endeavours.
 
+If not real to life, then at least the *least unrealistic* hacking sim around.
+
 
 
 Preface
