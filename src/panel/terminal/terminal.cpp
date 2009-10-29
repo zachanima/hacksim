@@ -1,10 +1,7 @@
 #include "terminal.hpp"
 
 void TerminalPanel::draw() {
-  this->buffer = "Hello, world!\n";
-  for (int i = 0; i < 80; i++) {
-    this->buffer += ' ';
-  }
+  this->buffer = "Hello, world!\n$ ";
 
   // Draw background.
   glColor3f(0.25f, 0.25f, 0.25f);
