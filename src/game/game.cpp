@@ -1,6 +1,7 @@
 #include "game.hpp"
 
 std::vector<Panel*> Game::panels;
+std::vector<Font*> Game::fonts;
 
 
 

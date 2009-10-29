@@ -18,6 +18,7 @@ class Game {
     static void draw();
 
   private:
+    static std::vector<Font*> fonts;
     static std::vector<Panel*> panels;
 };
 

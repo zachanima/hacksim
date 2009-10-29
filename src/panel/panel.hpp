@@ -4,15 +4,18 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 
+#include "../font/font.hpp"
+
 class Panel {
   public:
-    Panel(SDL_Rect);
+    Panel(SDL_Rect, Font*);
     virtual void draw();
 
     int width();
 
   protected:
     SDL_Rect area;
+    Font* font;
 };
 
 #endif // PANEL_HPP

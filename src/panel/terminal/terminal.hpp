@@ -7,7 +7,7 @@
 
 class TerminalPanel: public Panel {
   public:
-    TerminalPanel(SDL_Rect area): Panel(area) { }
+    TerminalPanel(SDL_Rect area, Font* font): Panel(area, font) { }
     void draw();
 
   private:

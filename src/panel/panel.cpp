@@ -1,7 +1,8 @@
 #include "panel.hpp"
 
-Panel::Panel(SDL_Rect area) {
+Panel::Panel(SDL_Rect area, Font* font) {
   this->area = area;
+  this->font = font;
 }
 
 

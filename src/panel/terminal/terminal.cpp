@@ -2,7 +2,7 @@
 
 void TerminalPanel::draw() {
   this->buffer = "Hello, world!\n";
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 80; i++) {
     this->buffer += ' ';
   }
 
@@ -14,5 +14,9 @@ void TerminalPanel::draw() {
     glVertex2s(this->area.x + this->area.w, this->area.y + this->area.h);
     glVertex2s(this->area.x               , this->area.y + this->area.h);
   glEnd();
+
+  // Draw buffer text.
+  glColor3f(1.0f, 1.0f, 1.0f);
+  this->font->draw(this->buffer, this->area);
 }
 
