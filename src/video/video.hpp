@@ -2,7 +2,6 @@
 #define VIDEO_HPP
 
 #include <string>
-
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 

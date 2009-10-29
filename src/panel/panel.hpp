@@ -1,20 +1,18 @@
 #ifndef PANEL_HPP
 #define PANEL_HPP
 
+#include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 
 class Panel {
   public:
-    Panel(int, int, int, int);
+    Panel(SDL_Rect);
     virtual void draw();
 
     int width();
 
   protected:
-    int x1;
-    int y1;
-    int x2;
-    int y2;
+    SDL_Rect area;
 };
 
 #endif // PANEL_HPP

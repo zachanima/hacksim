@@ -2,9 +2,9 @@
 #define GAME_HPP
 
 #include <vector>
-#include <boost/foreach.hpp>
 
 #include "../video/video.hpp"
+#include "../font/font.hpp"
 #include "../panel/panel.hpp"
 #include "../panel/terminal/terminal.hpp"
 
