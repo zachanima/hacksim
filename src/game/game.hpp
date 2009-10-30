@@ -2,6 +2,7 @@
 #define GAME_HPP
 
 #include <vector>
+#include <boost/foreach.hpp>
 
 #include "../video/video.hpp"
 #include "../font/font.hpp"
@@ -18,7 +19,7 @@ class Game {
     static void draw();
 
   private:
-    static std::vector<Font*> fonts;
+    static Font* font;
     static std::vector<Panel*> panels;
 };
 
