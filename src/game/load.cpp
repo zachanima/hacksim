@@ -1,25 +1,27 @@
 #include "game.hpp"
 
 void Game::load() {
-  const int FONT_WIDTH = 5;
-  const int FONT_HEIGHT = 9;
+  const int FONT_WIDTH     = 5;
+  const int FONT_HEIGHT    = 9;
   const int LETTER_SPACING = 1;
-  const int MARGIN = 3;
-  const int PADDING = 1;
-  const int COLS = 80;
-  const float MAP_RATIO = 16.0f / 9.0f;
+  const int MARGIN         = 3;
+  const int PADDING        = 1;
+  const int COLS           = 80;
+  const float MAP_RATIO    = 16.0f / 9.0f;
 
-  int LEFT_W = (FONT_WIDTH + LETTER_SPACING) * COLS + PADDING + PADDING;
+  int LEFT_W  = (FONT_WIDTH + LETTER_SPACING) * COLS + PADDING + PADDING;
   int RIGHT_W = Video::width - (LEFT_W + MARGIN + MARGIN + MARGIN);
 
+  // Make right panels grow until as wide as left panel is initially.
+  // After this, make left panel grow to fill the rest of the screen.
   if (RIGHT_W > LEFT_W) {
     RIGHT_W = LEFT_W;
     LEFT_W = Video::width - (RIGHT_W + MARGIN + MARGIN + MARGIN);
   }
 
   const int LEFT_H = Video::height - (MARGIN + MARGIN);
-  const int MAP_H = static_cast<int>(RIGHT_W / MAP_RATIO);
-  const int COM_H = Video::height - (MAP_H + MARGIN + MARGIN + MARGIN);
+  const int MAP_H  = static_cast<int>(RIGHT_W / MAP_RATIO);
+  const int COM_H  = Video::height - (MAP_H + MARGIN + MARGIN + MARGIN);
 
   SDL_Rect area[] = {
     { MARGIN                  , MARGIN                 , LEFT_W , LEFT_H },
