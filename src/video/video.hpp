@@ -20,6 +20,8 @@ class Video {
     static void drawRectangle(SDL_Rect);
     static void drawRectangle(SDL_Rect, Rectf);
 
+    friend class Game;
+
   private:
     static unsigned int width;
     static unsigned int height;
