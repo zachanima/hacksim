@@ -12,10 +12,10 @@ void Video::drawRectangle(SDL_Rect area, Rectf texture) {
     glTexCoord2f(texture.x, texture.y);
     glVertex2i(area.x, area.y);
 
-    glTexCoord2f(texture.x, texture.y + texture.w);
+    glTexCoord2f(texture.x, texture.y + texture.h);
     glVertex2i(area.x, area.y + area.h);
 
-    glTexCoord2f(texture.x + texture.w, texture.y + texture.w);
+    glTexCoord2f(texture.x + texture.w, texture.y + texture.h);
     glVertex2i(area.x + area.w, area.y + area.h);
 
     glTexCoord2f(texture.x + texture.w, texture.y);
