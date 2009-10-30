@@ -13,7 +13,7 @@ void Game::load() {
   Game::panels.push_back(new TerminalPanel(area[0], fonts[0]));
 
   // 52x22 @ 5x7
-  Game::panels.push_back(new Panel(area[1], fonts[0]));
+  Game::panels.push_back(new MapPanel(area[1], fonts[0]));
 
   // 52x37.4 @ 5x7
   Game::panels.push_back(new Panel(area[2], fonts[0]));

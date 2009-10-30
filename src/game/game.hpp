@@ -6,6 +6,7 @@
 #include "../video/video.hpp"
 #include "../font/font.hpp"
 #include "../panel/panel.hpp"
+#include "../panel/map/map.hpp"
 #include "../panel/terminal/terminal.hpp"
 
 class Game {
