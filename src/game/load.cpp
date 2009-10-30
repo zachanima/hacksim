@@ -1,21 +1,41 @@
 #include "game.hpp"
 
 void Game::load() {
+  const int FONT_WIDTH = 5;
+  const int FONT_HEIGHT = 9;
+  const int LETTER_SPACING = 1;
+  const int MARGIN = 3;
+  const int PADDING = 1;
+  const int COLS = 80;
+  const float MAP_RATIO = 16.0f / 9.0f;
+
+  int LEFT_W = (FONT_WIDTH + LETTER_SPACING) * COLS + PADDING + PADDING;
+  int RIGHT_W = Video::width - (LEFT_W + MARGIN + MARGIN + MARGIN);
+
+  if (RIGHT_W > LEFT_W) {
+    RIGHT_W = LEFT_W;
+    LEFT_W = Video::width - (RIGHT_W + MARGIN + MARGIN + MARGIN);
+  }
+
+  const int LEFT_H = Video::height - (MARGIN + MARGIN);
+  const int MAP_H = static_cast<int>(RIGHT_W / MAP_RATIO);
+  const int COM_H = Video::height - (MAP_H + MARGIN + MARGIN + MARGIN);
+
   SDL_Rect area[] = {
-    { 3, 3, 6 * 80, 480 - 3 - 3 },
-    { 6 * 80 + 3 + 2, 3, 800 - 6 * 80 - 3 - 3 - 2, 176 },
-    { 6 * 80 + 3 + 2, 176 + 3 + 2, 800 - 6 * 80 - 3 - 3 - 2, 480 - 176 - 3 - 3 - 2 }
+    { MARGIN                  , MARGIN                 , LEFT_W , LEFT_H },
+    { LEFT_W + MARGIN + MARGIN, MARGIN                 , RIGHT_W, MAP_H  },
+    { LEFT_W + MARGIN + MARGIN, MAP_H + MARGIN + MARGIN, RIGHT_W, COM_H  }
   };
 
-  Game::fonts.push_back(new Font("font.png", 5, 9));
+  Game::font = new Font("font.png", FONT_WIDTH, FONT_HEIGHT);
 
   // 80x60 @ 5x7
-  Game::panels.push_back(new TerminalPanel(area[0], fonts[0]));
+  Game::panels.push_back(new TerminalPanel(area[0], font));
 
   // 52x22 @ 5x7
-  Game::panels.push_back(new MapPanel(area[1], fonts[0]));
+  Game::panels.push_back(new MapPanel(area[1], font));
 
   // 52x37.4 @ 5x7
-  Game::panels.push_back(new Panel(area[2], fonts[0]));
+  Game::panels.push_back(new Panel(area[2], font));
 }
 
