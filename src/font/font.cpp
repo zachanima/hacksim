@@ -46,11 +46,10 @@ void Font::draw(std::string string, SDL_Rect area) {
     glCallList(this->list + c);
     glPopMatrix();
 
-    if (rectangle.x + this->w + LETTER_SPACING >= area.w || c == '\n') {
+    dx += this->w + LETTER_SPACING;
+    if (dx >= area.w || c == '\n') {
       dx = 0;
       dy += this->h + LINE_HEIGHT;
-    } else {
-      dx += this->w + LETTER_SPACING;
     }
   }
   glEnd();
