@@ -13,11 +13,11 @@ void Game::loop() {
   SDL_PollEvent(&event);
 
   while (SDLK_ESCAPE != event.key.keysym.sym) {
-    update();
+    Game::update();
 
     Video::update();
 
-    draw();
+    Game::draw();
 
     SDL_PollEvent(&event);
   }

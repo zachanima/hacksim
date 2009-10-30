@@ -11,7 +11,13 @@ class Video {
     static void initialize(int, int, std::string);
     static void update();
 
-    static void drawRectangle(SDL_Rect area);
+    static void orthographicalize(SDL_Rect);
+    static void perspectivize(SDL_Rect);
+
+    static void drawRectangle(SDL_Rect);
+
+  private:
+    static SDL_Rect area;
 };
 
 #endif // VIDEO_HPP
