@@ -17,14 +17,16 @@ class Video {
     static void initialize(std::string);
     static void update();
 
+    static void orthographicalize(SDL_Rect);
+    static void perspectivize(SDL_Rect);
+
     static void drawRectangle(SDL_Rect);
     static void drawRectangle(SDL_Rect, Rectf);
 
     friend class Game;
 
   private:
-    static unsigned int width;
-    static unsigned int height;
+    static SDL_Rect area;
 };
 
 #endif // VIDEO_HPP
