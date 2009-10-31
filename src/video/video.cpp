@@ -17,7 +17,7 @@ void Video::initialize(std::string title) {
   SDL_WM_SetCaption(title.c_str(), 0);
   SDL_SetVideoMode(Video::area.w, Video::area.h, BPP, FLAGS);
 
-  glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+  glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
 
