@@ -54,7 +54,7 @@ void Video::perspectivize(SDL_Rect area) {
   const float FOVY   = 45.0f;
   const float ASPECT = static_cast<float>(area.w) / area.h;
   const float ZNEAR  = 0.1f;
-  const float ZFAR   = 0.1f;
+  const float ZFAR   = 500.0f;
 
   glViewport(area.x, Video::area.h - (area.h + area.y), area.w, area.h);
   glMatrixMode(GL_PROJECTION);
