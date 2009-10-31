@@ -22,3 +22,4 @@ void Video::drawRectangle(SDL_Rect area, Rectf texture) {
     glVertex2i(area.x + area.w, area.y);
   glEnd();
 }
+
