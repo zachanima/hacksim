@@ -7,6 +7,11 @@ Panel::Panel(SDL_Rect area, Font* font) {
 
 
 
+void Panel::key(SDL_keysym key) {
+}
+
+
+
 void Panel::draw() {
   Video::orthographicalize(this->area);
 

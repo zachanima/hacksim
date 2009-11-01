@@ -8,8 +8,10 @@ std::vector<Panel*> Game::panels;
 void Game::initialize(std::string title) {
   Video::initialize(title);
 
-  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
   Game::load();
+
+  SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
+  SDL_EnableUNICODE(true);
 }
 
 
