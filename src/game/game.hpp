@@ -15,6 +15,7 @@ class Game {
     static void loop();
 
     static void load();
+    static void key(SDL_keysym);
     static void update();
     static void draw();
 
