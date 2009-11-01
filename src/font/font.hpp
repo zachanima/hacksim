@@ -15,8 +15,9 @@ class Font {
     Font(std::string, int, int);
     void draw(std::string, SDL_Rect);
 
-  private:
     static bool isPrintable(unsigned char);
+
+  private:
 
     unsigned int w;
     unsigned int h;
