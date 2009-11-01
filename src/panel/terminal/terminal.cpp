@@ -16,7 +16,9 @@ void TerminalPanel::key(SDL_keysym key) {
       // Fallthrough.
 
     default:
-      this->command += key.unicode;
+      if (Font::isPrintable(key.unicode)) {
+        this->command += key.unicode;
+      }
       break;
   }
 }
