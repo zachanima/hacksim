@@ -39,21 +39,29 @@ void Font::draw(std::string string, SDL_Rect area) {
 
   glBegin(GL_QUADS);
   BOOST_FOREACH(unsigned char c, string) {
-    const SDL_Rect rectangle = { area.x + dx, area.y + dy, this->w, this->h };
+    if (Font::isPrintable(c)) {
+      const SDL_Rect rectangle = { area.x + dx, area.y + dy, this->w, this->h };
 
-    glPushMatrix();
-    glTranslatef(rectangle.x, rectangle.y, 0.0f);
-    glCallList(this->list + c);
-    glPopMatrix();
+      glPushMatrix();
+      glTranslatef(rectangle.x, rectangle.y, 0.0f);
+      glCallList(this->list + c);
+      glPopMatrix();
 
-    dx += this->w + LETTER_SPACING;
-    if (dx >= area.w || c == '\n') {
-      dx = 0;
-      dy += this->h + LINE_HEIGHT;
+      dx += this->w + LETTER_SPACING;
+      if (dx >= area.w || c == '\n') {
+        dx = 0;
+        dy += this->h + LINE_HEIGHT;
+      }
     }
   }
   glEnd();
 
   glPopAttrib();
+}
+
+
+
+bool Font::isPrintable(unsigned char c) {
+  return (c >= '\x20' && c <= '\x7E');
 }
 
