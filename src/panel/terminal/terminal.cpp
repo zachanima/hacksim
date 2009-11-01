@@ -1,14 +1,14 @@
 #include "terminal.hpp"
 
 void TerminalPanel::draw() {
+  Panel::draw();
+  const int PADDING = 1;
+
   this->buffer = "Hello, world!\n$ ";
 
-  // Draw background.
-  glColor3f(0.25f, 0.25f, 0.25f);
-  Video::drawRectangle(this->area);
-
   // Draw buffer text.
+  SDL_Rect padded = { PADDING, PADDING, this->area.w - (PADDING + PADDING), this->area.h - (PADDING + PADDING) };
   glColor3f(1.0f, 1.0f, 1.0f);
-  this->font->draw(this->buffer, this->area);
+  this->font->draw(this->buffer, padded);
 }
 

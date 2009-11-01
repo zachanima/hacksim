@@ -13,8 +13,8 @@ void Panel::draw() {
   SDL_Rect rectangle = { 0, 0, this->area.w, this->area.h };
 
   glPushAttrib(GL_COLOR_BUFFER_BIT | GL_CURRENT_BIT);
-  glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glEnable(GL_BLEND);
   glColor4f(0.0f, 0.0f, 0.0f, 0.9f);
   Video::drawRectangle(rectangle);
   glPopAttrib();

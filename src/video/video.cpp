@@ -2,8 +2,6 @@
 
 SDL_Rect Video::area = { 0, 0, 800, 480 };
 
-
-
 void Video::initialize(std::string title) {
   const int BPP = 16;
   const int FLAGS =
