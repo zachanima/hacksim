@@ -13,6 +13,7 @@ class TerminalPanel: public Panel {
 
   private:
     std::string buffer;
+    std::string command;
     int cursor;
 };
 
