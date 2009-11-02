@@ -6,14 +6,12 @@ void MapPanel::load() {
 
   while (worldmap.good()) {
     if (worldmap.peek() == '\n') {
-      worldmap.get();
+      worldmap.ignore();
 
     } else if (worldmap.peek() == '#') {
-      char* buffer = static_cast<char*>(malloc(sizeof(char) * 256));
-      worldmap.getline(buffer, 256);
-      free(buffer);
       std::vector<boost::array<float, 2> > points;
       this->lines.push_back(points);
+      worldmap.ignore(256, '\n');
 
     } else {
       boost::array<float, 2> point;
