@@ -31,13 +31,8 @@ void Game::load() {
 
   Game::font = new Font("font.png", FONT_WIDTH, FONT_HEIGHT);
 
-  // 80x60 @ 5x7
   Game::panels.push_back(new TerminalPanel(area[0], font));
-
-  // 52x22 @ 5x7
   Game::panels.push_back(new Panel(area[1], font));
-
-  // 52x37.4 @ 5x7
   Game::panels.push_back(new Panel(area[2], font));
 }
 
