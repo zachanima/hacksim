@@ -28,5 +28,15 @@ void MapPanel::load() {
 void MapPanel::draw() {
   Panel::draw();
   Video::perspectivize(this->area);
+  glTranslatef(0, 0, -180.0f);
+
+  for (size_t i = 0; i < this->lines.size(); i++) {
+    glBegin(GL_LINE_LOOP);
+    for (size_t j = 0; j < this->lines[i].size(); j++) {
+      const boost::array<float, 2> point = this->lines[i][j];
+      glVertex2f(point[0], point[1]);
+    }
+    glEnd();
+  }
 }
 
