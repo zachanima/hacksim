@@ -6,6 +6,7 @@
 class MapPanel: public Panel {
   public:
     MapPanel(SDL_Rect area, Font* font): Panel(area, font) { }
+    void load();
     void draw();
 
   private:
