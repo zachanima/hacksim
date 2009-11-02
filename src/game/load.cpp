@@ -34,5 +34,9 @@ void Game::load() {
   Game::panels.push_back(new TerminalPanel(area[0], font));
   Game::panels.push_back(new MapPanel(area[1], font));
   Game::panels.push_back(new Panel(area[2], font));
+
+  BOOST_FOREACH(Panel* panel, Game::panels) {
+    panel->load();
+  }
 }
 
