@@ -180,9 +180,18 @@ Anatomy of the interface (1:2 scale):
     |                                        | [irc][bbs][NEWS][music] |
     +----------------------------------------+-------------------------+
 
-`TERMINAL` is where the majority of the game takes place.
+`TERMINAL` is where the majority of the game takes place. Has a number of tabs.
 
-`MAP`/`LOCAL` is a map/blueprint of the current network location.
+`MAP`/`LOCAL` is a map/blueprint of the current network location, possibly
+containing;
+
+  * World map
+  * Local view
+  * 3D Model view
+  * Media view
+    * Audio
+    * Video
+    * Image
 
 `COMMUNICATION` is the modular communication panel, containing;
 
