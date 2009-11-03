@@ -1,24 +1,28 @@
 #include "map.hpp"
 
 void MapPanel::load() {
-  std::ifstream worldmap;
-  worldmap.open("worldmap");
+  std::ifstream worldmap("worldmap");
 
+  glNewList(this->coastlines, GL_COMPILE);
+  glBegin(GL_LINE_STRIP);
   while (worldmap.good()) {
-    if (worldmap.peek() == '\n') {
-      worldmap.ignore();
-
-    } else if (worldmap.peek() == '#') {
-      std::vector<boost::array<float, 2> > points;
-      this->lines.push_back(points);
+    if (worldmap.peek() == '#') {
       worldmap.ignore(256, '\n');
+      glEnd();
+      glBegin(GL_LINE_STRIP);
 
     } else {
+      const static float RAD_TO_DEG = 3.14159f * 2.0f / 360.0f;
       boost::array<float, 2> point;
       worldmap >> point[0] >> point[1];
-      this->lines[this->lines.size() - 1].push_back(point);
+      worldmap.ignore();
+      glVertex3f(sin(RAD_TO_DEG * point[0]) * cos(RAD_TO_DEG * point[1]),
+                 sin(RAD_TO_DEG * point[1]),
+                 cos(RAD_TO_DEG * point[0]) * cos(RAD_TO_DEG * point[1]));
     }
   }
+  glEnd();
+  glEndList();
 }
 
 
@@ -26,15 +30,8 @@ void MapPanel::load() {
 void MapPanel::draw() {
   Panel::draw();
   Video::perspectivize(this->area);
-  glTranslatef(0, 0, -180.0f);
 
-  for (size_t i = 0; i < this->lines.size(); i++) {
-    glBegin(GL_LINE_LOOP);
-    for (size_t j = 0; j < this->lines[i].size(); j++) {
-      const boost::array<float, 2> point = this->lines[i][j];
-      glVertex2f(point[0], point[1]);
-    }
-    glEnd();
-  }
+  glTranslatef(0.0f, 0.0f, -2.5f);
+  glCallList(this->coastlines);
 }
 

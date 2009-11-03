@@ -1,6 +1,7 @@
 #ifndef MAP_PANEL_HPP
 #define MAP_PANEL_HPP
 
+#include <cmath>
 #include <fstream>
 #include <vector>
 #include <boost/array.hpp>
@@ -14,7 +15,7 @@ class MapPanel: public Panel {
     void draw();
 
   private:
-    std::vector<std::vector<boost::array<float, 2> > > lines;
+    unsigned int coastlines;
 };
 
 #endif // MAP_PANEL_HPP
