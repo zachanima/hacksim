@@ -7,10 +7,13 @@ Panel::Panel(SDL_Rect area, Font* font) {
 
 
 
-void Panel::key(SDL_keysym key) {
+void Panel::load() {
 }
 
 
+
+void Panel::key(SDL_keysym key) {
+}
 
 void Panel::draw() {
   Video::orthographicalize(this->area);
@@ -20,7 +23,7 @@ void Panel::draw() {
   glPushAttrib(GL_COLOR_BUFFER_BIT | GL_CURRENT_BIT);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glEnable(GL_BLEND);
-  glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
+  glColor4f(0.0f, 0.0f, 0.0f, 0.9f);
   Video::drawRectangle(rectangle);
   glPopAttrib();
 }

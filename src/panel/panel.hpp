@@ -10,6 +10,7 @@
 class Panel {
   public:
     Panel(SDL_Rect, Font*);
+    virtual void load();
     virtual void key(SDL_keysym);
     virtual void draw();
 
