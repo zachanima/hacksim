@@ -1,5 +1,10 @@
 #include "terminal.hpp"
 
+void TerminalPanel::load() {
+}
+
+
+
 void TerminalPanel::key(SDL_keysym key) {
   switch (key.sym) {
     case SDLK_BACKSPACE:
