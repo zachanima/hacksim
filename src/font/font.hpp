@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <string>
+#include <vector>
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 #include <SDL/SDL_image.h>
@@ -10,6 +11,17 @@
 
 #include "../image/image.hpp"
 #include "../video/video.hpp"
+
+enum FontColors {
+  FONT_BLACK = 30,
+  FONT_RED,
+  FONT_GREEN,
+  FONT_YELLOW,
+  FONT_BLUE,
+  FONT_MAGENTA,
+  FONT_CYAN,
+  FONT_WHITE
+};
 
 class Font {
   public:
@@ -19,6 +31,7 @@ class Font {
     static bool isPrintable(unsigned char);
 
   private:
+    static void setColor(int);
 
     unsigned int w;
     unsigned int h;

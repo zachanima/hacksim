@@ -40,21 +40,28 @@ void Font::draw(std::string string, SDL_Rect area) {
   glBegin(GL_QUADS);
   std::istringstream stream(string);
   while (stream.good()) {
-    const unsigned char c = stream.get();
+    if (stream.peek() == '\x1b') {
+      int fg;
+      stream.ignore(2);
+      stream >> fg;
+      stream.ignore();
+      Font::setColor(fg);
 
-    if (Font::isPrintable(c)) {
+    } else {
+      const unsigned char c = stream.get();
+
       glPushMatrix();
       glTranslatef(area.x + dx, area.y + dy, 0.0f);
       glCallList(this->list + c);
       glPopMatrix();
 
       dx += this->w + LETTER_SPACING;
+      if (dx >= area.w || c == '\n') {
+        dx = 0;
+        dy += this->h + LINE_HEIGHT;
+      }
     }
 
-    if (dx >= area.w || c == '\n') {
-      dx = 0;
-      dy += this->h + LINE_HEIGHT;
-    }
   }
   glEnd();
 
@@ -65,5 +72,45 @@ void Font::draw(std::string string, SDL_Rect area) {
 
 bool Font::isPrintable(unsigned char c) {
   return (c >= '\x20' && c <= '\x7E');
+}
+
+
+
+void Font::setColor(int color) {
+  switch (color) {
+    case FONT_BLACK:
+      glColor3f(0.0f, 0.0f, 0.0f);
+      break;
+
+    case FONT_RED:
+      glColor3f(1.0f, 0.5f, 0.5f);
+      break;
+
+    case FONT_GREEN:
+      glColor3f(0.5f, 1.0f, 0.5f);
+      break;
+
+    case FONT_YELLOW:
+      glColor3f(1.0f, 1.0f, 0.5f);
+      break;
+
+    case FONT_BLUE:
+      glColor3f(0.5f, 0.5f, 1.5f);
+      break;
+
+    case FONT_MAGENTA:
+      glColor3f(1.0f, 0.5f, 1.0f);
+      break;
+
+    case FONT_CYAN:
+      glColor3f(5.0f, 1.0f, 1.0f);
+      break;
+
+    case FONT_WHITE:
+      // Fallthrough.
+    default:
+      glColor3f(1.0f, 1.0f, 1.0f);
+      break;
+  }
 }
 
