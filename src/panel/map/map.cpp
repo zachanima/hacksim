@@ -28,10 +28,16 @@ void MapPanel::load() {
 
 
 void MapPanel::draw() {
+  static GLUquadric* quadric = gluNewQuadric();
   Panel::draw();
   Video::perspectivize(this->area);
 
+  glEnable(GL_DEPTH_TEST);
   glTranslatef(0.0f, 0.0f, -2.5f);
+  glColor3f(0.0f, 0.0f, 0.0f);
+  gluSphere(quadric, 1.0f, 36, 36);
+  glColor3f(1.0f, 1.0f, 1.0f);
   glCallList(this->coastlines);
+  glDisable(GL_DEPTH_TEST);
 }
 
