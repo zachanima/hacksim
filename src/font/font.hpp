@@ -1,6 +1,7 @@
 #ifndef FONT_HPP
 #define FONT_HPP
 
+#include <sstream>
 #include <string>
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>

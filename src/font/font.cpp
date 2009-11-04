@@ -38,17 +38,19 @@ void Font::draw(std::string string, SDL_Rect area) {
   glBindTexture(GL_TEXTURE_2D, this->texture);
 
   glBegin(GL_QUADS);
-  BOOST_FOREACH(unsigned char c, string) {
-    if (Font::isPrintable(c)) {
-      const SDL_Rect rectangle = { area.x + dx, area.y + dy, this->w, this->h };
+  std::istringstream stream(string);
+  while (stream.good()) {
+    const unsigned char c = stream.get();
 
+    if (Font::isPrintable(c)) {
       glPushMatrix();
-      glTranslatef(rectangle.x, rectangle.y, 0.0f);
+      glTranslatef(area.x + dx, area.y + dy, 0.0f);
       glCallList(this->list + c);
       glPopMatrix();
 
       dx += this->w + LETTER_SPACING;
     }
+
     if (dx >= area.w || c == '\n') {
       dx = 0;
       dy += this->h + LINE_HEIGHT;
