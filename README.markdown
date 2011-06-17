@@ -12,14 +12,14 @@ Engage in such activities as:
 
 * Gaining admin access to high-security websites
 * Retrieving data in exchange for information
-* Stealthly listening in on im/email conmunications
+* Stealthly listening in on im/email/irc conmunications
 * Hacking corporate networks, banks, government facilities and the likes
 * Breaking down security systems for information
 * Creating, managing and growing botnets
 * Tracing, hacking and framing other people
-* Scan and analyse systems for vulnerabilities
-* Edit/remove key system files, and watch the change affect the world
-* Exploit, DDoS, infect, crash, harden or listen on all systems in the world
+* Scanning and analysing systems for vulnerabilities
+* Editing/removing key system files, and watch the change affect the world
+* Exploiting, DDoSing, infecting, crashing, hardening or listening on all systems in the world
 * Update security software on servers you 'own'
 * Gather useful software (either free or illegally)
 
@@ -44,6 +44,7 @@ File systems are kept simple. Proposed directory structure:
   * /log
   * /ftp
   * /http
+  * /opt
 
 The following file manipulation tools are available to players:
 
@@ -58,7 +59,8 @@ The following file manipulation tools are available to players:
 Servers
 -------
 
-All servers in the game are retrieved by scanning or pinging the real hosts.
+All servers in the game are retrieved by scanning or pinging the real hosts
+(is this legal?).
 
 Server contents are generated procedurally, possibly from alexa ratings.
 
@@ -66,7 +68,9 @@ Server contents are generated procedurally, possibly from alexa ratings.
 Software
 --------
 
-Exploits are released once in a while, and fit a specific software and version.
+Exploits are released once in a while, and fit a specific software and
+version, or similar softwares using a particularly vulnerable piece of
+code (like gets).
 
 
 Software Hierachy
@@ -75,26 +79,29 @@ Software Hierachy
 * Program
   * NetworkProgram
     * ServerProgram
-      * HttpdProgram
+      * httpdProgram
         * apached
         * nginxd
         * issd
         * lighttpd
-      * FtpdProgram
+      * ftpdProgram
         * proftpd
         * pureftpd
-      * SshdProgram
+      * sshdProgram
         * opensshd
         * sshd
-      * IrcdProgram
+      * ircdProgram
       * DatabaseProgram
         * mysqld
         * mssqld
         * pgsqld
         * sqlited
+      * FreenetProgram
+        * freenetd
     * ClientProgram
       * BrowserProgram
         * wget
+        * freenet
       * ScanProgram
         * nmap
         * ping
@@ -125,6 +132,8 @@ Software Hierachy
     * CryptographyProgram
       * gpg
       * rot13
+      * md5
+      * sha
   * SystemProgram
     * FileSystemProgram
       * cd
@@ -227,7 +236,7 @@ terrible specifications.
 
 In case of losing access to the currently preferred system, whatever copied to
 your localhost stays intact. Thus, localhost is kind of a safe (or at least
-safer) place to store the most important files.
+safer) place to store the most important files. Just don't leave any traces.
 
 
 Money
@@ -235,8 +244,8 @@ Money
 
 While the game *will* feature money, these will *not* be usable by the player.
 
-The purpose of money in the game is solely symbolic; ruining people or
-companies, supporting organisations, wiring funds ... In short, jobs etc.
+The purpose of money in the game is solely symbolic/political; ruining people
+or companies, supporting organisations, wiring funds ... In short, jobs etc.
 
 The player has no use for money, as upgrades are not bought, but taken (see
 **Hardware** section).
